@@ -1,25 +1,58 @@
-<!DOCTYPE html>
 <html>
- 
 <head>
-  <meta charset="UTF-8">
-  <title>AllrightControllBot | 404</title>
-  
-      <link rel="stylesheet" href="404.css">
- 
+<title>404 -- page not found</title>
 </head>
- 
-<body>
- 
-  <div class="textglitch">
-  <a class="textglitch-link"><span>ERROR 404</span></a>
-</div>
-<div class="textglitch">
-  <a class="textglitch-link"><span>PAGE NOT FOUND</span></a>
-</div>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script  src="404.js"></script>
- 
+<body style="background-color: black; margin: 0; overflow: hidden;">
+    <script>
+        const d = 45;
+        const fear = ["ERROR 404","AQUARELKA89.RU","AQUADOBRO.RU","WINNIGAMES2024","ARSENIY LONSKIY","LILIYA LONSKAYA","link-short.github.io/chat-gpt","link-short.github.io/gpt-send"]
+        let labels = [];
+        let centers = [];
+        // background "wrong way"
+        for (let i = 0; i < 100; i++) {
+            const div = document.createElement('p');
+            div.setAttribute('class', 'bg');
+            div.innerText = fear[Math.floor(Math.random() * fear.length)];
+            div.style.position = 'absolute';
+            div.style.opacity = (i/2) / 300;
+            const rL = window.innerWidth * Math.random();
+            const rT = window.innerHeight * Math.random();
+            div.style.left = `${rL}px`;
+            div.style.top = `${rT}px`;
+            labels.push(div);
+            document.body.appendChild(div);
+        }
+
+        // center push
+        for (let i = 0; i < 25; i++) {
+            const div = document.createElement('p');
+            div.setAttribute('class', 'center');
+            div.innerText = "WINNIGAMES2024";
+            div.style.position = 'absolute';
+            div.style.opacity = (i/2) / 80;
+            const rL = d * Math.random() - (d / 2);
+            const rT = d * Math.random() - (d / 2);
+            div.style.left = `calc(50% + ${rL}px)`;
+            div.style.top = `calc(50% + ${rT}px)`;
+            div.style.transform = `translate(-50%, -50%) rotate(${(Math.random() * 4) - (2)}deg)`;
+            centers.push(div);
+            document.body.appendChild(div);
+        }
+
+        setInterval(() => {
+            for (const div of labels) {
+                const rL = window.innerWidth * Math.random();
+                const rT = window.innerHeight * Math.random();
+                div.style.left = `${rL}px`;
+                div.style.top = `${rT}px`;
+            }
+            for (const div of centers) {
+                const rL = d * Math.random() - (d / 2);
+                const rT = d * Math.random() - (d / 2);
+                div.style.left = `calc(50% + ${rL}px)`;
+                div.style.top = `calc(50% + ${rT}px)`;
+            }
+        }, 35);
+    </script>
 </body>
- 
 </html>
