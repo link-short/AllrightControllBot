@@ -1,58 +1,60 @@
-<html>
+
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-<title>404 -- page not found</title>
+    <title>Страница не найдена</title>
+    <meta name="robots" content="noindex"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html {
+            overflow-x: hidden;
+            margin: 0;
+            cursor: default;
+            text-align: center;
+            font-size: 16px;
+            line-height: 1;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            background: #fafafa;
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        a {
+            color: #808080;
+        }
+
+        .err-wrap {
+            padding: 40px 20px;
+        }
+
+        .err-img img {
+            display: block;
+            margin: 0 auto;
+            width: 80px;
+            height: 80px;
+        }
+
+        .err-header {
+            font-size: 40px;
+            color: #444;
+            margin: 25px 0 40px;
+        }
+    </style>
 </head>
-<body style="background-color: black; margin: 0; overflow: hidden;">
-    <script>
-        const d = 45;
-        const fear = ["ERROR 404","AQUARELKA89.RU","AQUADOBRO.RU","WINNIGAMES2024","ARSENIY LONSKIY","LILIYA LONSKAYA","link-short.github.io/chat-gpt","link-short.github.io/gpt-send"]
-        let labels = [];
-        let centers = [];
-        // background "wrong way"
-        for (let i = 0; i < 100; i++) {
-            const div = document.createElement('p');
-            div.setAttribute('class', 'bg');
-            div.innerText = fear[Math.floor(Math.random() * fear.length)];
-            div.style.position = 'absolute';
-            div.style.opacity = (i/2) / 300;
-            const rL = window.innerWidth * Math.random();
-            const rT = window.innerHeight * Math.random();
-            div.style.left = `${rL}px`;
-            div.style.top = `${rT}px`;
-            labels.push(div);
-            document.body.appendChild(div);
-        }
-
-        // center push
-        for (let i = 0; i < 25; i++) {
-            const div = document.createElement('p');
-            div.setAttribute('class', 'center');
-            div.innerText = "WINNIGAMES2024";
-            div.style.position = 'absolute';
-            div.style.opacity = (i/2) / 80;
-            const rL = d * Math.random() - (d / 2);
-            const rT = d * Math.random() - (d / 2);
-            div.style.left = `calc(50% + ${rL}px)`;
-            div.style.top = `calc(50% + ${rT}px)`;
-            div.style.transform = `translate(-50%, -50%) rotate(${(Math.random() * 4) - (2)}deg)`;
-            centers.push(div);
-            document.body.appendChild(div);
-        }
-
-        setInterval(() => {
-            for (const div of labels) {
-                const rL = window.innerWidth * Math.random();
-                const rT = window.innerHeight * Math.random();
-                div.style.left = `${rL}px`;
-                div.style.top = `${rT}px`;
-            }
-            for (const div of centers) {
-                const rL = d * Math.random() - (d / 2);
-                const rT = d * Math.random() - (d / 2);
-                div.style.left = `calc(50% + ${rL}px)`;
-                div.style.top = `calc(50% + ${rT}px)`;
-            }
-        }, 35);
-    </script>
+<body>
+<div class="err-wrap">
+    <div class="err-img"><img src="//m-files.cdnvideo.ru/web/images/stub_page_icons/404.png" alt=""/></div>
+    <div class="err-header">Страница не существует</div>
+    <div class="err-link"><a href="/">Перейти на главную</a></div>
+</div>
 </body>
 </html>
